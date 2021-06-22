@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
         tl.to(
           reverseOrderImg[i],
           {
-            delay: 3,
+            delay: 4,
             duration: 1,
             boxShadow: "0 0 9px 0px #ccc",
           },
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
           textsInACircle[i],
           {
             y: "-=50",
-            delay: 3,
+            delay: 3.2,
             duration: 1,
             opacity: 1,
             visibility: "visible",
