@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let transformXText = []
   let transformYText = []
   let triggerOn = false
-  let triggerOnSize = ""
   const mobile_size_event = new Event("mobile")
   let master = gsap.timeline()
 
@@ -190,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function handleMobileAnimation() {
-    if (triggerOn) {
+    if (triggerOn === 'small' || triggerOn === 'medium') {
       mobileAnimation(true)
     } else {
       mobileAnimation(false)
@@ -198,23 +197,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const checkIfStartAnimation = () => {
-    if (window.innerWidth <= 640 && (!triggerOn || triggerOnSize !== "small")) {
-      triggerOn = true
-      triggerOnSize = "small"
+    if (window.innerWidth <= 640 && triggerOn  !== "small") {
+      triggerOn = "small"
 
       document.dispatchEvent(mobile_size_event)
     } else if (
       window.innerWidth > 640 &&
       window.innerWidth <= 800 &&
-      (!triggerOn || triggerOnSize !== "medium")
+      triggerOn !== "medium"
     ) {
-      triggerOn = true
-      triggerOnSize = "medium"
+      triggerOn = "medium"
 
       document.dispatchEvent(mobile_size_event)
-    } else if (window.innerWidth > 800 && triggerOn) {
-      triggerOn = false
-      triggerOnSize = ""
+    } else if (window.innerWidth > 800 && triggerOn !== '') {
+      triggerOn = ''
 
       document.dispatchEvent(mobile_size_event)
     }
