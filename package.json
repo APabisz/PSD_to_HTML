@@ -4,9 +4,11 @@
   "description": "PSD to HTML",
   "main": "index.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "webpack serve",
     "dev": "webpack serve --host 0.0.0.0",
-    "build": "webpack",
+    "build": "webpack --config ./webpack.config.prod.js",
     "prod": "webpack --config ./webpack.config.prod.js"
   },
   "keywords": [],
