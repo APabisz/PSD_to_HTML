@@ -223,7 +223,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("mobile", handleMobileAnimation, false)
 
   window.addEventListener("resize", () => {
-    console.log("callback")
     checkIfStartAnimation()
   })
 
