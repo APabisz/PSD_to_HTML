@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
         tl.to(
           textsInACircle[i],
           {
-            y: "-=40",
+            y: "-=50",
             delay: 3,
             duration: 1,
             opacity: 1,
