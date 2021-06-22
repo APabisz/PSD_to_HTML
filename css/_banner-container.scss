@@ -63,6 +63,7 @@
     text-transform: uppercase;
     text-align: center;
     z-index: 2;
+    user-select: none;
 
     @include mq(xxlarge) {
       width: 250px* map-get($scale, xxlarge);
@@ -103,6 +104,7 @@
     left: 50%;
     width: $width-ring-img;
     transform: translate(-50%, -50%);
+    user-select: none;
 
     @include mq(xxlarge) {
       width: $width-ring-img * map-get($scale, xxlarge);
@@ -132,6 +134,7 @@
     left: 50%;
     width: $width-center-img;
     transform: translate(-50%, -50%);
+    user-select: none;
 
     @include mq(xxlarge) {
       width: $width-center-img * map-get($scale, xxlarge);
@@ -161,6 +164,7 @@
     left: 50%;
     width: $width-center-base-img;
     transform: translate(-50%, -50%);
+    user-select: none;
 
     @include mq(xxlarge) {
       width: $width-center-base-img * map-get($scale, xxlarge);

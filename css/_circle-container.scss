@@ -1,4 +1,5 @@
 .img-circle-container {
+
   @include img-on-circle($item-count: 12, $circle-size: $width-ring-img, $item-size: $width-item-img);
 
   @include mq(xxlarge) {
@@ -21,10 +22,12 @@
     @include img-on-circle($item-count: 12, $circle-size: $width-ring-img * map-get($scale, large), $item-size: $width-item-img * map-get($scale, large));
   }
 
+
   &__item {
     display: block;
     width: 100%;
     border-radius: 50%;
+    user-select: none;
   }
 }
 
@@ -78,6 +81,7 @@
     font-size: 1em;
     line-height: 100%;
     font-weight: 600;
+    user-select: none;
 
     @include mq(xxlarge) {
       font-size: 1em * map-get($scale, xxlarge);
