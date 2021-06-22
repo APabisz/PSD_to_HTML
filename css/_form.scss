@@ -108,6 +108,14 @@
       font-size: 16px * map-get($scale, xlarge);
     }
 
+    @include mq(medium) {
+      min-height: 105px * map-get($scale, xxlarge) * 1.5;
+    }
+
+    @include mq(xsmall) {
+      min-height: 105px * map-get($scale, xxlarge) * 2;
+    }
+
     &::placeholder {
       opacity: 1;
     }
