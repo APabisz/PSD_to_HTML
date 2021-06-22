@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const mainTrigger = document.querySelector(
-    ".banner-container__img-center"
-  )
+  const mainTrigger = document.querySelector(".banner-container__img-center")
   let imgInACircle = document.querySelectorAll(".img-circle-container > li")
   let textsInACircle = document.querySelectorAll(".text-circle-container > li")
   textsInACircle = [].slice.call(textsInACircle, 0).reverse()
@@ -52,15 +50,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const mainTriggerRotationTimeline = () => {
-      
-
       const tl = gsap.timeline({
         repeat: 11,
         delay: 3,
       })
       tl.to(mainTrigger, {
         duration: 1,
-        rotation: '+=30',
+        rotation: "+=30",
         delay: 3,
         ease: Power0.easeNone,
       })
@@ -155,6 +151,11 @@ document.addEventListener("DOMContentLoaded", () => {
           { y: "-=10", delay: 3, duration: 1, opacity: 0 },
           `item-show +=${i * 4 + 3}`
         )
+        tl.to(
+          textsInACircle[i],
+          { delay: 4, duration: 1, visibility: "hidden" },
+          `item-show +=${i * 4 + 3}`
+        )
       }
 
       return tl
@@ -188,11 +189,11 @@ document.addEventListener("DOMContentLoaded", () => {
       item.style = ""
     })
 
-    mainTrigger.style = ''
+    mainTrigger.style = ""
   }
 
   function handleMobileAnimation() {
-    if (triggerOn === 'small' || triggerOn === 'medium') {
+    if (triggerOn === "small" || triggerOn === "medium") {
       mobileAnimation(true)
     } else {
       mobileAnimation(false)
@@ -200,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const checkIfStartAnimation = () => {
-    if (window.innerWidth <= 640 && triggerOn  !== "small") {
+    if (window.innerWidth <= 640 && triggerOn !== "small") {
       triggerOn = "small"
 
       document.dispatchEvent(mobile_size_event)
@@ -212,8 +213,8 @@ document.addEventListener("DOMContentLoaded", () => {
       triggerOn = "medium"
 
       document.dispatchEvent(mobile_size_event)
-    } else if (window.innerWidth > 800 && triggerOn !== '') {
-      triggerOn = ''
+    } else if (window.innerWidth > 800 && triggerOn !== "") {
+      triggerOn = ""
 
       document.dispatchEvent(mobile_size_event)
     }
