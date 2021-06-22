@@ -5,9 +5,11 @@
   align-items: center;
   width: 100%;
   padding: 30px;
-  background-image: url('../public/assets/footer.png'), linear-gradient($color-main, $color-main);
+  background-image: url('../public/assets/footer.png');
+  background-color: $color-main;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: auto 145%;
 
   @include mq(xxlarge) {
     padding: 30px * map-get($scale, xxlarge);
