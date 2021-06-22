@@ -1,0 +1,59 @@
+.msg {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  min-height: 80px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 12px 0 #aaa;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: $color-secondary;
+  background-color: $color-form-link;
+  z-index: 11;
+
+  @include mq(xxlarge) {
+    min-height: 80px * map-get($scale, xxlarge);
+    padding: 10px * map-get($scale, xxlarge) 20px * map-get($scale, xxlarge);
+    font-size: 18px * map-get($scale, xxlarge);
+  }
+
+  @include mq(xlarge) {
+    min-height: 80px * map-get($scale, xlarge);
+    padding: 10px * map-get($scale, xlarge) 20px * map-get($scale, xlarge);
+    font-size: 18px * map-get($scale, xlarge);
+  }
+
+
+  &__btn {
+    padding: 8px 24px;
+    margin: 0 20px;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    color: $color-form;
+    background-color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    @include mq(xxlarge) {
+      margin: 0 20px * map-get($scale, xxlarge);
+      padding: 8px * map-get($scale, xxlarge) 24px * map-get($scale, xxlarge);
+      font-size: 14px * map-get($scale, xxlarge);
+    }
+
+    @include mq(xlarge) {
+      margin: 0 20px * map-get($scale, xlarge);
+      padding: 8px * map-get($scale, xlarge) 24px * map-get($scale, xlarge);
+      font-size: 14px * map-get($scale, xlarge);
+    }
+
+    &:hover {
+      background-color: darken(#fff, 10%);
+    }
+  }
+}

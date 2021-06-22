@@ -1,0 +1,103 @@
+.img-circle-container {
+  @include img-on-circle($item-count: 12, $circle-size: $width-ring-img, $item-size: $width-item-img);
+
+  @include mq(xxlarge) {
+    @include img-on-circle($item-count: 12, $circle-size: $width-ring-img * map-get($scale, xxlarge), $item-size: $width-item-img * map-get($scale, xxlarge));
+  }
+
+  @include mq(xlarge) {
+    @include img-on-circle($item-count: 12, $circle-size: $width-ring-img * map-get($scale, xlarge), $item-size: $width-item-img * map-get($scale, xlarge));
+  }
+
+  @include mq(large) {
+    @include img-on-circle($item-count: 12, $circle-size: $width-ring-img * map-get($scale, large), $item-size: $width-item-img * map-get($scale, large));
+  }
+
+  @include mq(medium) {
+    @include img-on-circle($item-count: 12, $circle-size: $width-ring-img * map-get($scale, xlarge), $item-size: $width-item-img * map-get($scale, xlarge));
+  }
+
+  @include mq(small) {
+    @include img-on-circle($item-count: 12, $circle-size: $width-ring-img * map-get($scale, large), $item-size: $width-item-img * map-get($scale, large));
+  }
+
+  &__item {
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+  }
+}
+
+
+.text-circle-container {
+  @include text-on-circle($item-count: 12, $circle-size: $width-ring-img, $item-size: $width-item-text);
+
+  &>* {
+    @include circle-shift($item-count: 12, $item-size: $width-item-text, $shift: $text-shift);
+  }
+
+  @include mq(xxlarge) {
+    @include text-on-circle($item-count: 12, $circle-size: $width-ring-img * map-get($scale, xxlarge), $item-size: $width-item-text * map-get($scale, xxlarge));
+
+    &>* {
+      @include circle-shift($item-count: 12, $item-size: $width-item-text * map-get($scale, xxlarge), $shift: $text-shift * map-get($scale, xxlarge));
+    }
+  }
+
+  @include mq(xlarge) {
+    @include text-on-circle($item-count: 12, $circle-size: $width-ring-img * map-get($scale, xlarge), $item-size: $width-item-text * map-get($scale, xlarge));
+
+    &>* {
+      @include circle-shift($item-count: 12, $item-size: $width-item-text * map-get($scale, xlarge), $shift: $text-shift * map-get($scale, xlarge));
+    }
+  }
+
+  @include mq(large) {
+    @include text-on-circle($item-count: 12, $circle-size: $width-ring-img * map-get($scale, large), $item-size: $width-item-text * map-get($scale, large));
+
+    &>* {
+      @include circle-shift($item-count: 12, $item-size: $width-item-text * map-get($scale, large), $shift: $text-shift * map-get($scale, large));
+    }
+  }
+
+  @include mq(medium) {
+
+
+    &>li {
+      visibility: hidden;
+      opacity: 0;
+      margin: 0 !important;
+    }
+  }
+
+
+  &__item {
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+    font-size: 1em;
+    line-height: 100%;
+    font-weight: 600;
+
+    @include mq(xxlarge) {
+      font-size: 1em * map-get($scale, xxlarge);
+    }
+
+    @include mq(xlarge) {
+      font-size: 1em * map-get($scale, xlarge);
+    }
+
+    @include mq(large) {
+      font-size: 1em * map-get($scale, large);
+    }
+
+    @include mq(medium) {
+      transform: translate(0) !important;
+      font-size: 1em * map-get($scale, xxlarge);
+    }
+
+    @include mq(small) {
+      font-size: 1em * map-get($scale, xlarge);
+    }
+  }
+}

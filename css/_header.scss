@@ -1,0 +1,87 @@
+.header {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  display: flex;
+  width: max-content;
+  flex-direction: column;
+  align-items: center;
+  color: $color-primary;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  @include mq(xxlarge) {
+    top: 30px * map-get($scale, xxlarge);
+  }
+
+  @include mq(xlarge) {
+    top: 30px * map-get($scale, xlarge);
+  }
+
+  @include mq(large) {
+    top: 30px * map-get($scale, large);
+  }
+
+  @include mq(medium) {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    transform: translateX(0);
+  }
+
+
+  &__title {
+    width: max-content;
+    padding: 16px;
+    font-size: 35.7px;
+    line-height: 100%;
+
+    @include mq(xxlarge) {
+      padding: 16px * map-get($scale, xxlarge);
+      font-size: 35.7px * map-get($scale, xxlarge)
+    }
+
+    @include mq(xlarge) {
+      padding: 16px * map-get($scale, xlarge);
+      font-size: 35.7px * map-get($scale, xlarge)
+    }
+
+    @include mq(large) {
+      padding: 16px * map-get($scale, large);
+      font-size: 35.7px * map-get($scale, large)
+    }
+
+    @include mq(medium) {
+      padding: 16px * map-get($scale, xlarge);
+      font-size: 35.7px * map-get($scale, xlarge)
+    }
+
+  }
+
+  &__description {
+    padding: 16px;
+    font-size: 16px;
+    line-height: 100%;
+
+    @include mq(xxlarge) {
+      padding: 16px * map-get($scale, xxlarge);
+      font-size: 16px * map-get($scale, xxlarge)
+    }
+
+    @include mq(xlarge) {
+      padding: 16px * map-get($scale, xlarge);
+      font-size: 16px * map-get($scale, xlarge)
+    }
+
+    @include mq(large) {
+      padding: 16px * map-get($scale, large);
+      font-size: 16px * map-get($scale, large)
+    }
+
+    @include mq(medium) {
+      padding: 16px * map-get($scale, xlarge);
+      font-size: 16px * map-get($scale, xlarge)
+    }
+  }
+}

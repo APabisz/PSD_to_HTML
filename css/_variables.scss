@@ -1,0 +1,134 @@
+$color-primary: #2f2f2f;
+$color-secondary: #fff;
+$color-form: #565e66;
+$color-form-link: #35a8e0;
+$color-main: #274291;
+$font-family-main: 'Hind',
+'Arial',
+sans-serif;
+$width-center-img: 469px;
+$width-center-base-img: 336px;
+$width-ring-img: 596px;
+$width-item-img: 81px;
+$width-item-text: 16px;
+$text-shift: 60px;
+
+@mixin img-on-circle($item-count, $circle-size, $item-size) {
+  width: $circle-size;
+  height: $circle-size;
+  padding: 0;
+  border-radius: 50%;
+  list-style: none;
+
+  >* {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $item-size;
+    height: $item-size;
+    margin: -($item-size / 2);
+
+    $angle: (360 / $item-count);
+    $rot: -90;
+
+    @for $i from 1 through $item-count {
+      &:nth-of-type(#{$i}) {
+        transform:
+          rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg);
+      }
+
+      $rot: $rot+$angle;
+    }
+  }
+}
+
+@mixin text-on-circle($item-count, $circle-size, $item-size) {
+  width: $circle-size;
+  height: $circle-size;
+  padding: 0;
+  border-radius: 50%;
+  list-style: none;
+
+  >* {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max-content;
+    height: $item-size;
+    margin: -($item-size);
+
+    $angle: (360 / $item-count);
+    $rot: -90;
+
+    @for $i from 1 through $item-count {
+      &:nth-of-type(#{$i}) {
+        transform:
+          rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg);
+      }
+
+      $rot: $rot+$angle;
+    }
+  }
+}
+
+
+@mixin circle-shift($item-count, $item-size, $shift) {
+
+  @for $i from 1 through $item-count {
+    $x: 0;
+    $y: 50%;
+
+    @if ($i==1) {
+      $x: -50%;
+      $y: calc(50% - #{$shift * 1.16});
+    }
+
+    @else if ($i > 1 and $i <=$item-count/2) {
+      $x: calc(#{$shift});
+    }
+
+    @else if ($i==$item-count/2 +1) {
+      $x: -50%;
+      $y: calc(50% + #{$shift * 1.16});
+    }
+
+    @else if ($i > $item-count/2 +1 and $i <=$item-count) {
+      $x: calc(-100% - #{$shift * 1.16});
+    }
+
+    &:nth-of-type(#{$i})>* {
+      transform: translate(calc(#{$x} + #{$item-size}), $y);
+    }
+  }
+}
+
+$breakpoints: (xsmall: (max-width: 460px),
+  small: (max-width: 640px),
+  medium: (max-width: 800px),
+  large: (max-width: 1024px),
+  xlarge: (max-width: 1200px),
+  xxlarge: (max-width: 1400px));
+
+
+$scale: (xsmall: 0.35,
+  small: 640/1920,
+  medium: 800/1920,
+  large: 1024/1920,
+  xlarge: 1200/1920,
+  xxlarge: 1400/1920);
+
+@mixin mq($breakpoint) {
+  $size: map-get($map: $breakpoints, $key: $breakpoint);
+
+  @if ($size) {
+    @media #{$size} {
+      @content;
+    }
+  }
+
+  @else {
+    @error '"#{$breakpoint}" - nie ma takiej wartości'
+  }
+}

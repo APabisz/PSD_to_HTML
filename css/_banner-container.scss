@@ -1,0 +1,189 @@
+.banner-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 1158px;
+  padding: 30px;
+
+  @include mq(xxlarge) {
+    min-height: 1158px * map-get($scale, xxlarge);
+    padding: 30px* map-get($scale, xxlarge);
+  }
+
+  @include mq(xlarge) {
+    min-height: 1158px * map-get($scale, xlarge);
+    padding: 30px* map-get($scale, xlarge);
+  }
+
+  @include mq(large) {
+    min-height: 1158px * map-get($scale, large);
+    padding: 30px* map-get($scale, large);
+  }
+
+  @include mq(medium) {
+    min-height: 1158px * map-get($scale, medium);
+    padding: 30px* map-get($scale, medium);
+  }
+
+  &__header {
+    padding: 10px;
+    text-align: center;
+
+    @include mq(xxlarge) {
+      padding: 10px * map-get($scale, xxlarge);
+    }
+
+    @include mq(xlarge) {
+      padding: 10px * map-get($scale, xlarge);
+    }
+
+    @include mq(large) {
+      padding: 10px * map-get($scale, large);
+    }
+  }
+
+  &__img-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    width: 250px;
+    height: 2em;
+    color: $color-secondary;
+    font-size: .95em;
+    line-height: 2.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    z-index: 2;
+
+    @include mq(xxlarge) {
+      width: 250px* map-get($scale, xxlarge);
+      height: 2em* map-get($scale, xxlarge);
+      font-size: .95em * map-get($scale, xxlarge);
+      line-height: 2.2em* map-get($scale, xxlarge);
+    }
+
+    @include mq(xlarge) {
+      width: 250px* map-get($scale, xlarge);
+      height: 2em* map-get($scale, xlarge);
+      font-size: .95em * map-get($scale, xlarge);
+      line-height: 2.2em* map-get($scale, xlarge);
+    }
+
+    @include mq(large) {
+      width: 250px * map-get($scale, large);
+      height: 2em * map-get($scale, large);
+      font-size: .95em * map-get($scale, large);
+      line-height: 2.2em * map-get($scale, large);
+    }
+
+    @include mq(medium) {
+      font-size: .95em * map-get($scale, xlarge);
+    }
+
+    @include mq(small) {
+      width: 250px;
+      height: 2em;
+      font-size: .95em * map-get($scale, large);
+      line-height: 2.2em;
+    }
+  }
+
+  &__img-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $width-ring-img;
+    transform: translate(-50%, -50%);
+
+    @include mq(xxlarge) {
+      width: $width-ring-img * map-get($scale, xxlarge);
+    }
+
+    @include mq(xlarge) {
+      width: $width-ring-img * map-get($scale, xlarge);
+    }
+
+    @include mq(large) {
+      width: $width-ring-img * map-get($scale, large);
+    }
+
+    @include mq(medium) {
+      width: $width-ring-img * map-get($scale, xlarge);
+    }
+
+    @include mq(small) {
+      width: $width-ring-img * map-get($scale, large);
+    }
+
+  }
+
+  &__img-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $width-center-img;
+    transform: translate(-50%, -50%);
+
+    @include mq(xxlarge) {
+      width: $width-center-img * map-get($scale, xxlarge);
+    }
+
+    @include mq(xlarge) {
+      width: $width-center-img * map-get($scale, xlarge);
+    }
+
+    @include mq(large) {
+      width: $width-center-img * map-get($scale, large);
+    }
+
+    @include mq(medium) {
+      width: $width-center-img * map-get($scale, xlarge);
+    }
+
+    @include mq(small) {
+      width: $width-center-img * map-get($scale, large);
+    }
+  }
+
+  &__img-center-base {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $width-center-base-img;
+    transform: translate(-50%, -50%);
+
+    @include mq(xxlarge) {
+      width: $width-center-base-img * map-get($scale, xxlarge);
+    }
+
+    @include mq(xlarge) {
+      width: $width-center-base-img * map-get($scale, xlarge);
+    }
+
+    @include mq(large) {
+      width: $width-center-base-img * map-get($scale, large);
+    }
+
+    @include mq(medium) {
+      width: $width-center-base-img * map-get($scale, xlarge);
+    }
+
+    @include mq(small) {
+      width: $width-center-base-img * map-get($scale, large);
+    }
+  }
+
+  &__img-circle-container,
+  &__text-circle-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+}

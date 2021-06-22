@@ -1,0 +1,55 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1000px;
+  padding: 26px;
+  color: $color-secondary;
+
+  @include mq(xxlarge) {
+    width: 1000px * map-get($scale, xxlarge);
+    padding: 26px * map-get($scale, xxlarge);
+  }
+
+  @include mq(xlarge) {
+    width: 1000px * map-get($scale, xlarge);
+    padding: 26px * map-get($scale, xlarge);
+  }
+
+  &__bold {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  &__title {
+    margin: 8px 20px;
+    font-size: 36px;
+    line-height: 100%;
+
+    @include mq(xxlarge) {
+      margin: 8px * map-get($scale, xxlarge) 20px * map-get($scale, xxlarge);
+      font-size: 36px * map-get($scale, xxlarge);
+    }
+
+    @include mq(xlarge) {
+      margin: 8px * map-get($scale, xlarge) 20px * map-get($scale, xlarge);
+      font-size: 36px * map-get($scale, xlarge);
+    }
+  }
+
+  &__details {
+    margin: 14px 0;
+    font-size: 18px;
+    line-height: 100%;
+
+    @include mq(xxlarge) {
+      margin: 14px * map-get($scale, xxlarge) 0;
+      font-size: 18px * map-get($scale, xxlarge);
+    }
+
+    @include mq(xlarge) {
+      margin: 14px * map-get($scale, xlarge) 0;
+      font-size: 18px * map-get($scale, xlarge);
+    }
+  }
+}

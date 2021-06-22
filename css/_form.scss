@@ -1,0 +1,246 @@
+.form {
+  display: flex;
+  max-width: 100%;
+  margin-top: 34px;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include mq(xxlarge) {
+    margin-top: 34px * map-get($scale, xxlarge);
+  }
+
+  @include mq(xlarge) {
+    margin-top: 34px * map-get($scale, xlarge);
+  }
+
+  @include mq(large) {
+    margin-top: 34px * map-get($scale, large);
+  }
+
+
+  &__name,
+  &__phone,
+  &__email,
+  &__company,
+  &__company-size,
+  &__company-income {
+    flex-basis: 32%;
+    max-width: 100%;
+    height: 51px;
+    padding: 14px;
+    margin-bottom: 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: $color-form;
+    background-color: #fff;
+
+    @include mq(xxlarge) {
+      height: 51px * map-get($scale, xxlarge);
+      padding: 14px * map-get($scale, xxlarge);
+      margin-bottom: 16px * map-get($scale, xxlarge);
+      font-size: 16px * map-get($scale, xxlarge);
+    }
+
+    @include mq(xlarge) {
+      height: 51px * map-get($scale, xlarge);
+      padding: 14px * map-get($scale, xlarge);
+      margin-bottom: 16px * map-get($scale, xlarge);
+      font-size: 16px * map-get($scale, xlarge);
+    }
+
+    @include mq(medium) {
+      flex-basis: 49%;
+    }
+
+    @include mq(xsmall) {
+      flex-basis: 100%;
+    }
+
+
+    &::placeholder {
+      opacity: 1;
+    }
+  }
+
+  &__company-size,
+  &__company-income {
+    position: relative;
+    appearance: none;
+    background-image: url("../public/assets/arrow.png");
+    background-size: 14px;
+    background-position-x: 95%;
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+
+    @include mq(xxlarge) {
+      background-size: 14px * map-get($scale, xxlarge);
+    }
+
+    @include mq(xlarge) {
+      background-size: 14px * map-get($scale, xlarge);
+    }
+  }
+
+  &__message {
+    flex-basis: 100%;
+    max-width: 100%;
+    min-height: 105px;
+    padding: 14px;
+    margin-bottom: 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: $color-form;
+
+    @include mq(xxlarge) {
+      min-height: 105px * map-get($scale, xxlarge);
+      padding: 14px * map-get($scale, xxlarge);
+      margin-bottom: 16px * map-get($scale, xxlarge);
+      font-size: 16px * map-get($scale, xxlarge);
+    }
+
+    @include mq(xlarge) {
+      min-height: 105px * map-get($scale, xlarge);
+      padding: 14px * map-get($scale, xlarge);
+      margin-bottom: 16px * map-get($scale, xlarge);
+      font-size: 16px * map-get($scale, xlarge);
+    }
+
+    &::placeholder {
+      opacity: 1;
+    }
+  }
+
+  &__checkbox-label {
+    flex-basis: 100%;
+    margin: 16px 0;
+    text-align: center;
+
+    @include mq(xxlarge) {
+      margin: 16px * map-get($scale, xxlarge) 0;
+      font-size: 16px * map-get($scale, xxlarge);
+    }
+
+    @include mq(xlarge) {
+      margin: 16px * map-get($scale, xlarge) 0;
+      font-size: 16px * map-get($scale, xlarge);
+    }
+  }
+
+  &__checkbox {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 3px;
+    transform: translateY(2px);
+    outline: none;
+
+    @include mq(xxlarge) {
+      width: 16px * map-get($scale, xxlarge);
+      height: 16px * map-get($scale, xxlarge);
+      margin-right: 8px* map-get($scale, xxlarge);
+    }
+
+    @include mq(xlarge) {
+      width: 16px * map-get($scale, xlarge);
+      height: 16px * map-get($scale, xlarge);
+      margin-right: 8px* map-get($scale, xlarge);
+    }
+
+    &::before {
+      display: block;
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      top: 0;
+      left: 0;
+      border-radius: 3px;
+      content: "";
+      background-color: white;
+
+      @include mq(xxlarge) {
+        width: 16px * map-get($scale, xxlarge);
+        height: 16px * map-get($scale, xxlarge);
+      }
+
+      @include mq(xlarge) {
+        width: 16px * map-get($scale, xlarge);
+        height: 16px * map-get($scale, xlarge);
+      }
+    }
+
+    &:checked::after {
+      position: absolute;
+      top: 2px;
+      left: 5px;
+      display: block;
+      width: 4px;
+      height: 8px;
+      border: solid $color-form-link;
+      border-width: 0 2px 2px 0;
+      transform: rotate(35deg);
+      content: "";
+
+      @include mq(xxlarge) {
+        width: 4px * map-get($scale, xxlarge);
+        height: 8px * map-get($scale, xxlarge);
+        top: 1px;
+        left: 4px;
+      }
+
+      @include mq(xlarge) {
+        width: 4px * map-get($scale, xlarge);
+        height: 8px * map-get($scale, xlarge);
+        top: 1px;
+        left: 3px;
+      }
+    }
+
+    &:checked {
+      background-color: #fff;
+    }
+  }
+
+  &__link {
+    color: $color-form-link;
+    text-decoration: none;
+
+    &:hover {
+      color: darken($color-form-link, 10%)
+    }
+  }
+
+  &__submit-btn {
+    padding: 15px 50px;
+    margin: 16px auto 0;
+    border: none;
+    border-radius: 5px;
+    justify-self: center;
+    font-size: 14px;
+    color: white;
+    background-color: $color-form-link;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: .15s;
+    cursor: pointer;
+
+    @include mq(xxlarge) {
+      padding: 15px * map-get($scale, xxlarge) 50px * map-get($scale, xxlarge);
+      margin-top: 16px * map-get($scale, xxlarge);
+      font-size: 14px *map-get($scale, xxlarge);
+    }
+
+    &:hover {
+      background-color: darken($color-form-link, 10%);
+    }
+
+    &:active {
+      position: relative;
+      top: 2px;
+      background-color: darken($color-form-link, 10%);
+    }
+  }
+}

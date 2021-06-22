@@ -1,0 +1,43 @@
+.main {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 1158px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  @include mq(xxlarge) {
+    min-height: 1158px * map-get($scale, xxlarge);
+  }
+
+  @include mq(xlarge) {
+    min-height: 1158px * map-get($scale, xlarge);
+  }
+
+  @include mq(large) {
+    min-height: 1158px * map-get($scale, large);
+  }
+
+  @include mq(medium) {
+    min-height: auto;
+    padding: 30px;
+  }
+
+  &__header {
+    padding: 10px;
+    text-align: center;
+
+    @include mq(xxlarge) {
+      padding: 10px * map-get($scale, xxlarge);
+    }
+
+    @include mq(xlarge) {
+      padding: 10px * map-get($scale, xlarge);
+    }
+
+    @include mq(large) {
+      padding: 10px * map-get($scale, large);
+    }
+  }
+}
