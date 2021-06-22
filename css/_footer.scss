@@ -23,4 +23,8 @@
     padding: 30px * map-get($scale, large);
   }
 
+  @include mq(medium) {
+    background-size: auto 100%;
+  }
+
 }
