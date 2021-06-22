@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       document.dispatchEvent(mobile_size_event)
     } else if (
-      window.innerWidth >= 640 &&
+      window.innerWidth > 640 &&
       window.innerWidth <= 800 &&
       (!triggerOn || triggerOnSize !== "medium")
     ) {
