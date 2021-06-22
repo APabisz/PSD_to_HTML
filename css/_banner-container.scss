@@ -23,8 +23,12 @@
   }
 
   @include mq(medium) {
-    min-height: 1158px * map-get($scale, medium);
+    min-height: 1158px * map-get($scale, large);
     padding: 30px* map-get($scale, medium);
+  }
+
+  @include mq(small) {
+    min-height: 1158px * map-get($scale, medium);
   }
 
   &__header {

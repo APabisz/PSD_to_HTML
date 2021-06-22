@@ -93,11 +93,11 @@
 
     @include mq(medium) {
       transform: translate(0) !important;
-      font-size: 1em * map-get($scale, xxlarge);
+      font-size: 1em * map-get($scale, xxlarge) * 1.1;
     }
 
     @include mq(small) {
-      font-size: 1em * map-get($scale, xlarge);
+      font-size: 1em * map-get($scale, xxlarge);
     }
   }
 }
