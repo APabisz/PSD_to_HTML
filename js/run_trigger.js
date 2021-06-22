@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const mainTrigger = document.querySelector(
+    ".banner-container__img-center"
+  )
   let imgInACircle = document.querySelectorAll(".img-circle-container > li")
   let textsInACircle = document.querySelectorAll(".text-circle-container > li")
   textsInACircle = [].slice.call(textsInACircle, 0).reverse()
@@ -49,9 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const mainTriggerRotationTimeline = () => {
-      const mainTrigger = document.querySelector(
-        ".banner-container__img-center"
-      )
+      
 
       const tl = gsap.timeline({
         repeat: 11,
@@ -59,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       tl.to(mainTrigger, {
         duration: 1,
-        rotation: 30,
+        rotation: '+=30',
         delay: 3,
         ease: Power0.easeNone,
       })
@@ -186,6 +187,8 @@ document.addEventListener("DOMContentLoaded", () => {
     textsInACircle.forEach((item) => {
       item.style = ""
     })
+
+    mainTrigger.style = ''
   }
 
   function handleMobileAnimation() {
